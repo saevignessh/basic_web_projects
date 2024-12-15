@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        button{
+            margin-left:50px;
+            margin-bottom: 50px;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+        }
+        #color1,#color2{
+            text-align: center;
+        }
+        #demo{
+            height: 500px;
+            width: 600px;
+            border: 2px solid black;
+            margin-left: 500px;
+            margin-bottom: 20px;
+        }
+        #blue{
+            background-color: blue;
+            padding:5px 18px 5px 18px;
+        }
+        #red{
+            background-color: red;
+            padding:5px 18px 5px 18px;
+        }
+        #green{
+            background-color: green;
+            padding:5px 13px 5px 13px;
+        }
+        #yellow{
+            background-color: yellow;
+            padding:5px 12px 5px 12px;
+        }
+        #pink{
+            background-color:pink;
+            padding:5px 15px 5px 15px;
+        }
+        #orange{
+            background-color:orange;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="demo">
+    </div>
+    <div id="color1">
+        <button id="blue">blue</button>
+        <button id="red">red</button>
+        <button id="green">green</button>
+    </div>
+    <div id="color2">
+        <button id="yellow">yellow</button>
+        <button id="pink">pink</button>
+        <button id="orange">orange</button>
+    </div>
+    <script>
+        let demoblue=document.getElementById("blue");
+        let demored=document.getElementById("red");
+        let demogreen=document.getElementById("green");
+        let demoyellow=document.getElementById("yellow");
+        let demopink=document.getElementById("pink");
+        let demoorange=document.getElementById("orange");
+        let demoColor=document.getElementById("demo");
+        demoblue.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="blue";
+        });
+        demored.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="red";
+        });
+        demogreen.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="green";
+        });
+        demoyellow.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="yellow";
+        });
+        demopink.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="pink";
+        });
+        demoorange.addEventListener("click",()=>{
+            demoColor.style.backgroundColor="orange";
+        });
+    </script>
+</body>
+</html>

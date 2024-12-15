@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            margin-left: 500px;
+            margin-top: 100px;
+            border-radius: 5px;
+            background-color: lightblue;
+        }
+        #number{
+            text-align: center;
+            margin-top: 30px;
+        }
+        #mainnumber{
+            margin: 20px 0px 20px 140px;
+            width: 200px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: lightcyan;
+        }
+        #Play{
+            margin: 10px 0px 10px 200px;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(237, 244, 35, 0.953);
+        }
+        #empty{
+            border: none;
+            border-style: none;
+            outline: none;
+            margin-left: 95px;
+            margin-top: 20px;
+            width: 300px;
+            color: green;
+            background-color: lightblue;
+            text-align: center;
+        }
+        #body{
+            background-color:lightyellow;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="parent">
+        <h2 id="number">Maching Number</h2>
+        <input type="number" placeholder="Enter a number from 0 to 10" id="mainnumber">
+        <div>
+        <button id="Play">Play</button>
+        </div>
+        <input type="text" id="empty">
+    </div>
+    <script>
+        let inputTag=document.getElementById("mainnumber");
+        let Play=document.getElementById("Play");
+        let empty=document.getElementById("empty");
+        
+        Play.addEventListener("click",(event)=>{
+            let click=Math.trunc(Math.random()*11);
+        if(inputTag.value==""){
+            empty.value="Invalid Number !. Please enter a valid number";
+        }
+        else if(inputTag.value==click){
+            empty.value="Congratulations Matched";
+        }
+        else{
+            empty.value="Sorry not matched, Better luck next time...";
+        }
+        inputTag.value="";
+        });
+    </script>
+    
+</body>
+</html>

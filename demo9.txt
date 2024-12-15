@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div{
+            height: 500px;
+            width: 800px;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: 350px;
+            margin-top: 100px;
+            background-color: lightskyblue;
+        }
+        #table{
+            text-align: center;
+            margin: 20px 50px 20px 150px;
+            width: 500px;
+            height: 300px;
+        }
+        #body{
+            background-color:lightgreen;
+        }
+    </style>
+</head>
+<body id="body">
+    <div>
+        <h2>My Cart</h2>
+        <table border="2px" id="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody id="parent">
+                <tr>
+                    <td>01</td>
+                    <td>Mobile</td>
+                    <td>599$</td>
+                    <td>
+                        <button id="plusmobile"><b>+</b></button>
+                        <b id="countmobile">1</b>
+                        <button id="minusmobile"><b>-</b></button>
+                    </td>
+                    <td id="totalmp">599$</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>T-Shirt</td>
+                    <td>99$</td>
+                    <td>
+                        <button id="plusshirt"><b>+</b></button>
+                        <b id="countshirt">1</b>
+                        <button id="minusshirt"><b>-</b></button>
+                    </td>
+                    <td id="totalsp">99$</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Shoes</td>
+                    <td>199$</td>
+                    <td>
+                        <button id="plusshoe"><b>+</b></button>
+                        <b id="countshoe">1</b>
+                        <button id="minusshoe"><b>-</b></button>
+                    </td>
+                    <td id="totalsop">199$</td>
+                </tr>
+            </tbody>
+            <script>
+                let mobilePrice=Number(599);
+                let plusmobile=document.getElementById("plusmobile");
+                let minusmobile=document.getElementById("minusmobile");
+                let countmobile=document.getElementById("countmobile");
+                let totalmp=document.getElementById("totalmp");
+                let mobilecount=Number(countmobile.innerHTML);
+                plusmobile.addEventListener("click",()=>{
+                    ++mobilecount;
+                if(mobilecount>0)
+                {
+                    countmobile.innerHTML=mobilecount;
+                    totalmp.innerHTML=(mobilePrice+=599)+"$";
+                }
+                    
+                });
+                minusmobile.addEventListener("click",()=>{
+                    --mobilecount;
+                if(mobilecount>0)
+                {
+                    countmobile.innerHTML=mobilecount;
+                    totalmp.innerHTML=(mobilePrice-=599)+"$";
+                }  
+                });
+
+                let shirtPrice=Number(99);
+                let plusshirt=document.getElementById("plusshirt");
+                let minusshirt=document.getElementById("minusshirt");
+                let countshirt=document.getElementById("countshirt");
+                let totalsp=document.getElementById("totalsp");
+                let shirtcount=Number(countmobile.innerHTML);
+                plusshirt.addEventListener("click",()=>{
+                    ++shirtcount;
+                if(shirtcount>0)
+                {
+                    countshirt.innerHTML=shirtcount;
+                    totalsp.innerHTML=(shirtPrice+=99)+"$";
+                }
+                });
+                minusshirt.addEventListener("click",()=>{
+                    --shirtcount;
+                if(shirtcount>0)
+                {
+                    countshirt.innerHTML=shirtcount;
+                    totalsp.innerHTML=(shirtPrice-=99)+"$";
+                }  
+                });
+                let shoePrice=Number(199);
+                let plusshoe=document.getElementById("plusshoe");
+                let minusshoe=document.getElementById("minusshoe");
+                let countshoe=document.getElementById("countshoe");
+                let totalsop=document.getElementById("totalsop");
+                let shoecount=Number(countshoe.innerHTML);
+                plusshoe.addEventListener("click",()=>{
+                    ++shoecount;
+                if(shoecount>0)
+                {
+                    countshoe.innerHTML=shoecount;
+                    totalsop.innerHTML=(shoePrice+=199)+"$";
+                }
+                });
+                minusshoe.addEventListener("click",()=>{
+                    --shoecount;
+                if(shoecount>0)
+                {
+                    countshoe.innerHTML=shoecount;
+                    totalsop.innerHTML=(shoePrice-=199)+"$";
+                }  
+                });
+            </script>
+        </table>
+    </div>
+</body>
+</html>

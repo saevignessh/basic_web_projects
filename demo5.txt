@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+         button{
+            padding: 10px 50px 10px 50px;
+            margin-top: 30px;
+            margin-left: 100px;
+            border-radius:100px;
+        }
+        #count{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="plus"><b>+</b></button>
+    <b id="count">0</b>
+    <button id="minus"><b>-</b></button>
+    <script>
+        let Inc=document.getElementById("plus");
+        let Dec=document.getElementById("minus");
+        let countTag=document.getElementById("count");
+        let count=Number(countTag.innerHTML);
+        Inc.addEventListener("click",()=>{
+            countTag.innerHTML=++count;
+        let n=countTag.innerHTML;
+        let flag=true;
+        for(let i=2;i<=n/2;i++){
+           if(n%i==0){
+            flag=false;
+           }
+        }
+        if(flag && n>1){
+            document.body.style.backgroundColor="blue";
+           }
+        else if(countTag.innerHTML%2==0){
+                document.body.style.backgroundColor="green";
+            }
+        else if(countTag.innerHTML%2!=0){
+            document.body.style.backgroundColor="red";
+            }
+        });
+        Dec.addEventListener("click",()=>{
+            countTag.innerHTML=--count;
+            let n=countTag.innerHTML;
+        let flag=true;
+        for(let i=2;i<=n/2;i++){
+           if(n%i==0){
+            flag=false;
+           }
+        }
+        if(flag && n>1){
+            document.body.style.backgroundColor="blue";
+           }
+        else if(countTag.innerHTML%2==0){
+                document.body.style.backgroundColor="green";
+            }
+        else if(countTag.innerHTML%2!=0){
+            document.body.style.backgroundColor="red";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #body{
+            background-color: lightgoldenrodyellow;
+        }
+        #parent{
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            margin: 50px 0px 0px 500px;
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+        #words{
+            margin-left: 29px;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            background-color: lightblue;
+        }
+        #char{
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            background-color: lightblue;
+        }
+        #textarea{
+            margin: 30px 0px 0px 120px;
+        }
+        #one,#two{
+            margin: 10px 0px 0px 50px;
+        }
+        #button{
+            margin: 30px 0px 0px 130px;
+        }
+        #backspace{
+            margin-left: 60px;
+            padding: 5px 15px 5px 15px;
+            border-radius: 5px;
+        }
+        #clear{
+            padding: 5px 15px 5px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="parent">
+    <textarea id="textarea" rows="5" cols="30"></textarea>
+    <div id="one">
+        <label>No of Characters:</label>
+        <input type="number" id="char">
+    </div>
+    <div id="two">
+        <label>No of words:</label>
+        <input type="number" id="words">
+    </div>
+    <div id="button">
+        <button id="clear">clear</button>
+        <button id="backspace">backspace</button>
+    </div>
+</div>
+<script>
+    let textareaTag=document.getElementById("textarea");
+    let charTag=document.getElementById("char");
+    let wordsTag=document.getElementById("words");
+    let clearareaTag=document.getElementById("clear");
+    let backspaceTag=document.getElementById("backspace");
+    textareaTag.addEventListener("input",()=>{
+        charTag.value=textareaTag.value.length;
+        wordsTag.value=textareaTag.value.split(" ").length;
+    });
+    clearareaTag.addEventListener("click",()=>{
+        textareaTag.value="";
+        charTag.value="";
+        wordsTag.value="";
+    });
+    backspaceTag.addEventListener("click",()=>{
+        textareaTag.value=textareaTag.value.slice(0,-1);
+        charTag.value=textareaTag.value.length;
+        wordsTag.value=textareaTag.value.split(" ").length;
+    });
+</script>
+</body>
+</html>
